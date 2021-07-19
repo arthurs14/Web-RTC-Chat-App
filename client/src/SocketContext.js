@@ -1,5 +1,5 @@
 import React, { createContext, useState, useRef, useEffect } from 'react';
-import { io } from 'socket.io/client';
+import { io } from 'socket.io-client';
 import Peer from 'simple-peer';
 
 const SocketContext = createContext();
@@ -85,5 +85,26 @@ const ContextProvider = ({ children }) => {
     window.location.reload();
   };
 
-  return ();
+  const data = {
+    call,
+    callAccepted,
+    myVideo,
+    userVideo,
+    stream,
+    name,
+    setName,
+    callEnded,
+    me,
+    callUser,
+    leaveCall,
+    answerCall,
+  };
+
+  return (
+    <SocketContext.Provider value={data}>
+      { children }
+    </SocketContext.Provider>
+  );
 };
+
+export { ContextProvider, SocketContext };
