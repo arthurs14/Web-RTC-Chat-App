@@ -75,5 +75,15 @@ const ContextProvider = ({ children }) => {
     connectionRef.current = peer;
   };
 
-  const leaveCall = () => {};
+  const leaveCall = () => {
+    setCallEnded(true);
+
+    // destroy connection - stop input from camera and video
+    connectionRef.current.destroy();
+
+    // reloads page with new user id
+    window.location.reload();
+  };
+
+  return ();
 };
