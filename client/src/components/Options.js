@@ -56,7 +56,7 @@ const Options = ({ children }) => {
           <Grid container className={classes.gridContainer}>
             <Grid item xs={12} md={6} className={classes.padding}>
               <Typography variant="h6" gutterBottom>Account Info</Typography>
-              <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} />
+              <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} fullWidth />
               <CopyToClipboard text={me} className={classes.margin}>
                 <Button 
                   variant="contained" 
@@ -74,7 +74,8 @@ const Options = ({ children }) => {
               <TextField 
                 label="ID to Call" 
                 value={idToCall} 
-                onChange={(e) => setIdToCall(e.target.value)} 
+                onChange={(e) => setIdToCall(e.target.value)}
+                fullWidth 
               />
               {callAccepted && !callEnded ? (
                 <Button 
