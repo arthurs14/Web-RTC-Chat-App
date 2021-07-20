@@ -57,6 +57,7 @@ const Options = ({ children }) => {
             <Grid item xs={12} md={6} className={classes.padding}>
               <Typography variant="h6" gutterBottom>Account Info</Typography>
               <TextField label="Name" value={name} onChange={(e) => setName(e.target.value)} fullWidth />
+              {console.log(me)}
               <CopyToClipboard text={me} className={classes.margin}>
                 <Button 
                   variant="contained" 
